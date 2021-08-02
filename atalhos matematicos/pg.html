@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o 1o número da progressão:
+    <br><br>
+    <input id="in_numero_um">
+    <br><br>
+    Informe a razão:
+    <br><br>
+    <input id="in_razao">
+    <br><br>
+    Informe qual o termo da progressão que deseja ver:
+    <br><br>
+    <input id="in_termo_desejado">
+    <br><br>
+    <button onclick="calcular()">Calcular PG</button>
+    <br><br>
+    <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+    var num = Number(in_numero_um.value)
+    var razao = Number(in_razao.value)
+    var termo = Number(in_termo_desejado.value)
+
+    var pg = num*(razao**(termo-1))
+
+    resultado.innerHTML = `O ${termo}º termo nessa PG será ${pg}`
+    }
+</script>
+<!--Crie um programa em HTML/JS que calcule a progressão geométrica, fazendo o seguinte:
+a) Solicite o 1º número da progressão;
+b) Solicite a razão;
+c) Solicite qual o número (termo) da progressão deseja ver;
+d) Ao clicar em "Calcular PG": 
+d.1) Calcule o termo conforme indicado em c) e exiba, abaixo a frase: "O Xº termo nessa PG será Y";
+Obs: X é o número indicado em c) e Y é o valor que o programa calculou;
+#ficadica: Calculadora de PG online e fórmula.-->

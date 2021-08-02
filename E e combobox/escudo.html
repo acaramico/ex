@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o grupo que você torce:
+    <br>
+    <select id="select_grupo">
+        <option value="https://images-americanas.b2w.io/produtos/01/00/img/1779272/5/1779272535_1GG.jpg">BTS</option>
+        <option value="https://www.asianconnection.com.br/image/cache/catalog/products/musica/txt-official-light-stick-1000x1000..jpg">TXT</option>
+        <option value="https://d3ugyf2ht6aenh.cloudfront.net/stores/998/072/products/img_20191120_0900031-fd161320c27c7235fc15742512851418-1024-1024.jpg">SKZ</option>
+        <option value="https://d3ugyf2ht6aenh.cloudfront.net/stores/987/955/products/weverse-shop-pre-order-enhypen-official-light-stick-16808546107472_720x1-bfbc9ace2341a2af1716056278274521-640-0.jpeg">EN-</option>
+    </select>
+    <br>
+    <button onclick="ver_foto()">Ver Lightstick</button>
+    <br>
+    <img src=" " id="foto_final" style="height: 300px;">
+    
+
+    
+</body>
+</html>
+<script>
+    function ver_foto(){
+        foto_final.src = select_grupo.value
+        
+    }
+</script>
+<!--2. Crie um programa em HTML/JS o qual:
+a) Solicite o time grande de São Paulo que o usuário torce (dentre os 4 grandes) numa combo
+b) Ao clicar num botão "Ver escudo", deve aparecer o escudo do time selecionado abaixo da combo
+
+OBS: NÃO deve ser usado "if"-->
+

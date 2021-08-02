@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;" >
+    Informe o tempo em anos que trabalhou para o pai da pretendente:
+    <br>
+    <input id="in_anos">
+    <br><br>
+    Informe a quantidade em kilos de trigo que suas plantações renderam:
+    <br>
+    <input id="in_kilos">
+    <br><br>
+    Informe a quantidade em dias que ele falou ao trabalho estar doente:
+    <br>
+    <input id="in_dias">
+    <br><br>
+    <button onclick="match()">Deu match?</button>
+    <br><br>
+    <div id="frase_final"></div>
+    <br>
+    <img src=" " style="height: 300px;" id="foto">
+    
+</body>
+</html>
+<script>
+    function match(){
+        var anos = Number(in_anos.value)
+        var kilos = Number(in_kilos.value)
+        var dias = Number(in_dias.value)
+        if (anos>=5 && kilos>=300 && dias<=5) {
+            frase_final.innerHTML = 'Minha filha será sua!'
+            foto.src = 'https://lh3.googleusercontent.com/DI6Y6PGiiZiJuqZ7Ck5of31SNpirwAAtiZPBCzQ9SU09yM6-MgbNE4SNFxiSwYYSx0-WuO8DEMgbFBrJdTfTyxD6q_G8EBD-bXw=w960-rj-nu-e365'
+            foto.style.height = '450px'
+        }
+        else {
+            frase_final.innerHTML = 'Deu ruim! Trabalhe mais 2 anos'
+            foto.src = 'https://i.pinimg.com/originals/b9/9a/4e/b99a4ecfd2a9b154c8195d03b6dca47d.jpg'
+        }
+    }
+</script>
+<!--Milhares de anos antes de Cristo não existia Tinder, Badoo e afins para se conseguir um relacionamento, seja ele breve ou duradouro. 
+    Para um pai permitir que sua filha se relacionasse com sua filha, as vezes colocava condições insanas. Um deles, segundo consta na Bíblia cristã, 
+    exigiu 14 anos de trabalho para um rapaz. Vamos ajudar um pai dessa época a verificar se um homem pode casar com sua filha.
+
+a) Solicite o tempo, em anos, que ele trabalhou para o pai da pretendente
+b) Solicite a quantidade, em kilos, de trigo, que suas plantações renderam
+c) Solicite a quantidade em dias que ele falou ao trabalho por estar doente
+d) Ao clicar no botão "Deu match?", podem aparecer as seguintes coisas abaixo desse botão:
+
+    A frase "Minha filha será sua!" e a foto de uma noiva. Somente se o homem trabalhou pelo menos 5 anos,
+     se seu trabalho rendeu pelo menos 300 kilos de trigo e se faltou até 5 dias de trabalho.
+    A frase "Deu ruim! Trabalhe mais 2 anos" e a foto de um homem representando um pai bravo, caso contrário.-->

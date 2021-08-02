@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_valor" placeholder="valor do carro a ser financiado">
+    <br>
+    <input id="in_quant" placeholder="quantidade de parcelas">
+    <br>
+    <button onclick="parcelar()">Ver parcelar</button>
+    <br>
+    <div id="div_resultado"></div> 
+</body>
+</html>
+<script>
+    function parcelar(){
+        var quant = Number(in_quant.value)
+        var valor = Number(in_valor.value)
+        var parcela = valor/quant
+        var contador = 0
+        if (valor == '') {
+            alert('Valor total inválido')
+        }
+        else if(quant == '' || quant < 6){
+            alert('Parcelar inválidas')
+        }else{
+            div_resultado.innerHTML= 'Parcela '+contador+': R$'+parcela.toFixed(2)+'<br>'
+            while(contador<quant){
+            ++contador
+            parcela+= (parcela*1.5)-parcela
+            div_resultado.innerHTML+='Parcela '+contador+': R$'+parcela.toFixed(2)+'<br>'
+            }
+        }
+    }
+</script>
+<!--(desafio). Crie um programa no qual:
+a) O usuário informa o valor de um carro a ser financiado
+b) A quantidade de parcelas do financiamento
+c) Ao clicar em "Ver parcelas", primeiro analise o seguinte...
+d) Caso o valor do carro for vazio ou menor que 1000, exiba um alert "Valor total inválido" e não faça mais nada
+e) Caso a quantidade de parcelas for vazia ou menor que 6, exiba um alert "Parcelas inválidas" e não faça mais nada
+f) Caso os valores estejam válidos, exiba o valor de cada parcela considerando que a 1ª é sem juros e é igual ao total/parcelas e,
+ a partir da 2ª, há um juro sobre juro de 1,5% ao mês. Ex:
+
+Parcela 1: R$1000.00
+Parcela 2: R$1015.00
+Parcela 3: R$1030.22
+-->

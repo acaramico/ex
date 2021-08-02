@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o valor do carro a vista:
+    <br><br>
+    <input id="in_valor">
+    <br><br>
+    Informe a taxa de juros ao mês:
+    <br><br>
+    <input id="in_taxas">
+    <br><br>
+    Informe a quantidade de parcelas:
+    <br><br>
+    <input id="in_parcelas">
+    <br><br>
+    <button onclick="calcular()">Calcular prejú</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var valor = Number(in_valor.value)
+        var taxa = Number(in_taxas.value)
+        var parcelas = Number(in_parcelas.value)
+        
+        var razao = (taxa*0.01)+1
+        var sla = valor/parcelas
+        var valor_total = sla*((razao**parcelas)-1)/(razao - 1)
+        var depois_mes = valor*0.8
+        var carrros = valor_total/valor
+
+        resultados.innerHTML = `Seu carro vai sair por um total de <b>R$${valor_total.toFixed(2)}</b>. Após 1 mês, ele já vai valer só <b>R$${depois_mes}</b>. 
+        Porque comprou financiado, vai pagar o correspondente a <b>R$${carrros.toFixed(1)}</b> carros`
+    }
+
+</script>
+<!--(desafio). Crie um programa em HTML/JS que simule uma determinada situação na compra de um carro financiado...
+..No Brasil, devido ao "status" que carro dá e à falta de educação financeira do brasileiro médio, é comum 2 erros financeiros gritantes na compra de carros: 
+Comprar um carro 0km e comprar via financiamento, parcelando em muitas vezes, como em 24x ou 36x por exemplo.
+Assim, seu programa vai mostrar ao usuário, de maneira gráfica, o quão ruim é comprar um carro 0km e financiado:
+a) Solicite o valor do carro a vista;
+b) Solicite a taxa de juros a.m. (ao mês);
+c) Solicite a quantidade de parcelas;
+d) Ao clicar em "Calcular prejú":
+d.1) Exiba uma frase como esta:
+    Seu carro vai sair por um total de R$A. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a C carros;
+Sn = a1 (qn - 1) / (q - 1)
+          
+Obs:
+   A - O total pago após o final do financiamento. 
+   #Ficadica: A taxa de juros é simplesmente a razão de uma PG (se a taxa for 5, a razão é 1.05, se a taxa for 3, a razão é 1.03, se a taxa for 6,5, a razão é 1.065)
+    e o primeiro termo da PG num financiamento é sempre o valor do bem dividido pela quantidade de parcelas. Exiba este valor com 2 casas decimais;
+   B - O valor do carro a vista menos 20%. #Ficadica: Para "tirar" 20% de um valor, basta obter 80% dele. Exiba este valor com 2 casas decimais;
+   C - A quantidade de "carros" que comprou financiado, se comparado com o valor a vista. 
+   Ex: A vista seria 40.000, mas financiado ficou em 80.000. Nesse caso, C tem que dar 2. 
+   Ex2: A vista seria 50.000, mas financiado ficou em 140.000. Nesse caso, C tem que dar 2.8. 
+   #ficadica: para calcular este valor, basta fazer a soma dos termos de uma PG finita (veja aqui) Exiba este valor com 1 casa decimal.-->

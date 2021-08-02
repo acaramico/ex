@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do país:
+    <br>
+    <input id="in_pais">
+    <br><br>
+    População:
+    <br>
+    <input id="in_popu">
+    <br><br>
+    Grau de liberdade econômica:
+    <br>
+    <input id="in_grau">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar País</button>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_analise"></div>
+    
+</body>
+</html>
+<script>
+    var listapais = [];
+    var listapopu = [];
+    var listagrau = [];
+    
+
+    function cadastrar(){
+        var pais = in_pais.value
+        var popu = Number(in_popu.value)
+        var grau = Number(in_grau.value)
+
+        if (popu < 1000 || grau < 0 || grau > 100) {
+            alert("Valores inválidos!")
+        }
+        else{
+            listapais.push(pais)
+            listapopu.push(popu)
+            listagrau.push(grau)
+        }
+
+    }
+    function analisar(){
+        div_analise.innerHTML = ""
+        var categoria = "";
+        var idh = 0;
+        var desemprego = 0;
+        var desempregoestimado = 0;
+        var source = "";
+        
+        for (let contador = 0; contador < listapais.length; contador++) {
+            const paisatual = listapais[contador];
+            if (listagrau[contador] > 80 ) {
+                categoria = 'Livre'
+                idh = 0.85
+                desemprego = 5
+                source = "https://upload.wikimedia.org/wikipedia/commons/7/7e/MurrayBW.jpg"
+            }else if (listagrau[contador] > 70 && listagrau[contador] <= 80) {
+                categoria = 'Quase livre'
+                idh = 0.77
+                desemprego = 7
+                source = "https://www.aier.org/wp-content/uploads/2019/07/miltonfriedman-800x480.jpg"
+            }else if (listagrau[contador] > 60 && listagrau[contador] <= 70) {
+                categoria = 'Moderadamente livre'
+                idh = 0.74
+                desemprego = 8
+                source = "https://www.suno.com.br/wp-content/uploads/2018/10/john-maynard-keynes.jpg"
+            }else if (listagrau[contador] > 50 && listagrau[contador] <= 60) {
+                categoria = 'Quase reprimido'
+                idh = 0.65
+                desemprego = 15
+                source = "https://blogdosampaiodotcom.files.wordpress.com/2015/02/bernard_shaw_colorthumb.jpg?w=333"
+            }else if (listagrau[contador] <= 50) {
+                categoria = 'Reprimido'
+                idh = 0.6
+                desemprego = 22
+                source = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/200px-Karl_Marx_001.jpg"
+            }
+
+            desempregoestimado = (desemprego*listapopu[contador])/100
+
+            div_analise.innerHTML += "País "+(contador+1)+': <b>'+paisatual+'</b><br>'+
+            'Categoria: <b>'+categoria+'</b><br>'+
+            'Habitantes: <b>'+listapopu[contador]+'</b><br>'+
+            'IDH médio provável: <b>'+idh+'</b><br>'+
+            'Desemprego médio provável: <b>'+desemprego+'%</b> ou seja, talvez <b>'+desempregoestimado.toFixed(0)+'</b> estejam sem emprego<br>'+
+            '<img style="height: 70px;" src="'+source+'"><br><br>'
+            
+        }
+    }
+</script>

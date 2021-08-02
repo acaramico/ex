@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_aluno">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="consultar()">Pesquisar</button>
+    <br><br>
+    <div id="div_lista"></div>
+    
+</body>
+</html>
+<script>
+    var listaalunos = [];
+    function cadastrar(){
+        var aluno = in_aluno.value
+
+        if (listaalunos.length == 0) {
+            listaalunos.push(aluno)
+        }else{
+            var existealuno = false;
+            for (var contador = 0; contador < listaalunos.length; contador++) {
+                if (listaalunos[contador].toLowercase == aluno.toLowercase) {
+                    existealuno = true;
+                    break;
+                }                
+            }
+
+            if (!existealuno) {
+                listaalunos.push(aluno)
+            }
+
+
+        }
+
+
+
+        
+        div_lista.innerHTML = ''
+        for (var contador = 0; contador < listaalunos.length; contador++) {
+            div_lista.innerHTML+= listaalunos[contador]+'<br>'
+            
+        }
+    
+    }
+    function consultar(){
+        var aluno = in_aluno.value;
+        if (listaalunos.includes(aluno)) {
+            alert(`O aluno ${aluno} já existe na lista`)
+        }
+    }
+</script>
+<!--Crie um programa em HTML/JS em que:
+
+a) Tenha uma lista de alunos e um botão para cadastrar novos (mostre como a lista está a cada novo aluno inserido).
+
+b) Ao tentar inserir um aluno, verifique se já não existe na lista - caso exista, não insira-o.
+
+c) Tenha um campo para pesquisar alunos, onde o usuário possa verificar se o aluno em questão já existe 
+(se existir, exiba um alert com a frase "O aluno X já existe na lista").
+
+*Obs o campo para pesquisar alunos pode ser o mesmo para inserir novos.-->

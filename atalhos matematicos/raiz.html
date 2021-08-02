@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número:
+    <br><br>
+    <input id="in_numero">
+    <br><br>
+    <button onclick="raiz_quadrada()">Exibir sua raiz quadrada</button>
+    <br><br>
+    <div id="resultado_um"></div>
+    <br><br>
+    <button onclick="raiz_cubica()">Exibir sua raiz cúbica</button>
+    <br><br>
+    <div id="resultado_dois"></div>
+    
+</body>
+</html>
+<script>
+    
+    function raiz_quadrada(){
+        var num = Number(in_numero.value)
+        var quadrada = num**1/2
+        resultado_um.innerHTML = quadrada;
+
+    }
+    function raiz_cubica(){
+        var num = Number(in_numero.value)
+        var cubica = num**1/3
+        resultado_dois.innerHTML = cubica;
+
+    }
+
+</script>
+<!--Crie um programa em HTML/JS o qual:
+
+a) Solicite um número qualquer;
+
+b) Ao clicar no botão "Exibir sua raiz quadrada": 
+
+b.1) Exiba abaixo do botão a raiz quadrada do número;
+
+c) Ao clicar no botão "Exibir sua raiz cúbica":
+
+c.1) Exiba abaixo do botão a raiz cúbica do número;-->

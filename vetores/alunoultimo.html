@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_aluno">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="consultar()">Pesquisar</button>
+    <br><br>
+    <div id="div_lista"></div>
+    
+</body>
+</html>
+<script>
+    var listaalunos = [];
+    function cadastrar(){
+        var aluno = in_aluno.value
+        listaalunos.push(aluno)
+
+        div_lista.innerHTML = ''
+        for (var contador = 0; contador < listaalunos.length; contador++) {
+            div_lista.innerHTML+= listaalunos[contador]+'<br>'
+            
+        }
+    
+    }
+    function consultar(){
+        var aluno = in_aluno.value;
+
+        var quantosdele = 0;
+            
+        for (var contador = 0; contador < listaalunos.length; contador++) {
+            if (listaalunos[contador].toLowerCase == aluno.toLowercase) {
+                quantosdele++;                
+            }                
+        }
+
+        if (quantosdele > 0) {
+            alert(`O aluno ${aluno} já existe na lista ${quantosdele} vezes`)
+        }else{
+            alert(`Aluno não encontrado`)
+        }
+    }
+</script>
+<!--Crie um programa em HTML/JS em que:
+
+a) Tenha um campo para cadastrar alunos em uma lista e um botão "Cadastrar" (mostre como a lista está a cada novo aluno inserido).
+
+b) Tenha um campo para pesquisar alunos, onde o usuário possa verificar se o aluno em questão já existe - se existir,
+ mostre também quantas vezes o aluno em questão aparece na lista (pode ser em um alert).
+
+*Obs o campo para pesquisar alunos pode ser o mesmo para inserir novos.-->

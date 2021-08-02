@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a bebida desejada:
+    <br>
+    <select id="select_bebida">
+        <option value="0">Nenhuma</option>
+        <option value="4">Água</option>
+        <option value="6">Refrigerante</option>
+        <option value="5">Cerveja</option>
+    </select>
+    <br><br>
+    Informe a refeição desejada:
+    <br>
+    <select id="select_refeicao">
+        <option value="20">Salada</option>
+        <option value="40">Feijoada</option>
+        <option value="35">Bife a Cavalo</option>
+        <option value="30">Peixe Frito</option>
+    </select>
+    <br><br>
+    Informe seu nome:
+    <br>
+    <input id="in_nome">
+    <br><br>
+    <button onclick="calcular_total()">Calcular total a pagar</button>
+    <br><br>
+    <div id="conta_pagar"></div>
+</body>
+</html>
+<script>
+    function calcular_total(){
+        var bebida = Number(select_bebida.value)
+        var comida = Number(select_refeicao.value)
+        var total_pagar = bebida+comida
+        conta_pagar.innerHTML = 'Olá, '+in_nome.value+'. Seu almoço vai custar um total de R$'+total_pagar
+    }
+
+</script>
+<!--1. Crie um programa em HTML/JS o qual:
+a) Solicite a "Bebida" que o usuário vai consumir, dentre as seguintes opções:
+   Nenhuma, Água, Refrigerante, Cerveja
+   Defina o preço que quiser para cada um desses itens
+   
+b) Solicite a "Refeição" que o usuário vai consumir, dentre as seguintes opções:
+   Salada, Feijoada, Bife a Cavalo, Peixe Frito
+   Defina o preço que quiser para cada um desses itens
+   
+c) Solicite o nome do usuário   
+
+d) Ao clicar num botão "Calcular total a pagar", exiba na própria página uma frase como esta:
+   
+   Olá, NOME. Seu almoço vai custar um total de R$TOTAL
+   
+Onde NOME é o valor informado em c) e TOTAL é a soma do valor da bebida do item a) com o valor da refeição do item b)   
+-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_num">
+    <br>
+    <button onclick="analisar()">Analisar histórico</button>
+    <br><br>
+    <div id="resultado"></div>
+    <div id="resultado2"></div>
+</body>
+</html>
+<script>
+    var listanum = [];
+    function analisar(){
+        var maior = 0;
+        var menor = 0;
+        var num = Number(in_num.value)
+        listanum.push(num)
+        resultado.innerHTML = ""
+        resultado2.innerHTML = ""
+        
+        for (let contador = 1; contador <= listanum.length; contador++) {
+            if (contador == 1) {
+                maior = num
+                menor = num
+            }
+            
+            if (listanum[contador-1] > maior) {
+                maior = listanum[contador-1]
+            }
+            else if (listanum[contador-1] < menor) {
+                menor = listanum[contador-1]
+            }
+            resultado.innerHTML += contador+'° Número: '+listanum[contador-1]+'<br><br>'
+            resultado2.innerHTML = 'Maior: '+maior+'<br>Menor: '+menor
+        
+        }
+    }
+</script>
+<!--Crie um programa no qual:
+
+a) Tenha um campo "Digite um número qualquer".
+
+b) Tenha um botão "Analisar histórico". Ao clicar nele, o número é cadastrado em algum lugar e, em seguida, deve aparecer um histórico dos números cadastrados
+, bem como o maior e o menor, como no exemplo a seguir:
+
+   1º Número: 15
+
+   2º Número: 22
+
+   3º Número: 19
+
+   4º Número: 5
+
+ 
+
+   Maior: 22
+
+   Menor: 5-->

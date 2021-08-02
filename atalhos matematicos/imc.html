@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o peso:
+    <input id="in_peso">
+    <br><br>
+    Informe a altura:
+    <input id="in_altura">
+    <br><br>
+    <button onclick="calcular()">Calcular IMC</button>
+    <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+    var peso = Number(in_peso.value)
+    var altura = Number(in_altura.value)
+
+    var imc = peso/(altura**2)
+
+    resultado.innerHTML = imc;
+    
+}
+</script>
+<!--Crie um programa em HTML/JS o qual:
+
+a) Solicite o peso e a altura do usuário;
+
+b) Ao clicar num botão "Calcula IMC",
+
+b.1) Calcule e exiba seu IMC na tela (não num alert), abaixo do botão;
+
+Obs: Pesquise a fórmula simples de IMC na internet;-->

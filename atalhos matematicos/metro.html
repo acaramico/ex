@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="oito_funcao()">8 passagens</button>
+    <button onclick="vinte_funcao()">20 passagens</button>
+    <button onclick="cinquenta_funcao()">50 passagens</button>
+     <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+     function oito_funcao(){
+        var recarga = Number(32.45)
+        var carga = Number(35.20)
+        var porcentagem = recarga/carga
+        var porcem = (1-porcentagem)*100
+        var bonus = (carga-recarga)/4.40
+        
+        resultado.innerHTML = `Ao comprar 8 passagens, você pagou ${porcem.toFixed(2)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus`
+    }
+    function vinte_funcao(){
+        var recarga = Number(78.65)
+        var carga = Number(88)
+        var porcentagem = recarga/carga
+        var porcem = (1-porcentagem)*100
+        var bonus = (carga-recarga)/4.40
+        
+        resultado.innerHTML = `Ao comprar 20 passagens, você pagou ${porcem.toFixed(2)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus`
+    }
+    function cinquenta_funcao(){
+        var recarga = Number(191.41)
+        var carga = Number(220)
+        var porcentagem = recarga/carga
+        var porcem = (1-porcentagem)*100
+        var bonus = (carga-recarga)/4.40
+        
+        resultado.innerHTML = `Ao comprar 50 passagens, você pagou ${porcem.toFixed(2)}% a menos. É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus`
+    }
+</script>
+
+
+<!--No metrô de São Paulo, é possível adquirir um tipo de bilhete chamado "cartão fidelidade", 
+    no qual existe um desconto progressivo de acordo com a quantidade de passagens compradas. Só podem ser compradas 8, 20 ou 50 passagens (vide figura a seguir).
+
+Assim, crie um programa em HTML/JS que mostre quantas passagens o usuário tem de "bônus" de acordo com a quantidade de passagens compradas.
+ Considere que o valor da passagem é R$4,40.
+a) Deve ter os botões "08 passagens", "20 passagens" e "50 passagens";
+b) Ao clicar em qualquer um dos botões:
+b.1) Faça os cálculos necessários e exiba uma mensagem como esta:
+    "Ao comprar X passagens, você pagou Y% a menos. É como se tivesse ganhado Z passagens de bônus";
+Obs:
+X - é a quantidade de passagens, conforme o botão clicado (8, 20 ou 50);
+Y - O quão porcento o valor pago ficou em relação à compra de X passagens a 4,40. Divida o valor pago pelo valor que seria pago no caso de tarifa cheia.
+ Faça 1 menos esse valor e multiplique por 100;
+Z - Quantas passagens a 4,40 o usuário "ganhou". Aqui pode ser um número decimal. Arredonde para 1 casa decimal;-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Selecione o tipo de arroz usado:
+    <br>
+    <select id="tipo_arroz">
+        <option value="integral">Integral</option>
+        <option value="branco">Branco</option>
+    </select>
+    <br><br>
+    Tempo de cozimento em minutos:
+    <br>
+    <input id="in_tempo">
+    <br><br>
+    Quantidade de sal em gramas:
+    <br>
+    <input id="in_sal">
+    <br><br>
+    <button onclick="avaliar()">Avaliar arroz</button>
+    <br><br>
+    <div id="resultado"></div>
+    <img style="height: 200px;" id="foto_final">
+
+    
+</body>
+</html>
+<script>
+    function avaliar(){
+        var sal = Number(in_sal.value)
+        var tempo = Number(in_tempo.value)
+        
+        if((tipo_arroz.value == 'branco' && tempo==10 && sal<=10) || (tipo_arroz.value == 'integral' && tempo == 20 && sal<=15)) {            
+            resultado.innerHTML = 'Arroz perfeito'
+            foto_final.src = 'https://cdn130.picsart.com/260206748008202.png?type=webp&to=min&r=640'
+        }
+        else{
+            resultado.innerHTML = 'Seu arroz não está perfeito'
+            foto_final.src ='https://i.pinimg.com/originals/c8/d4/5b/c8d45b216b7b8c3f6d179dc97ac515ea.jpg'
+        }
+
+    }
+</script>
+<!--desafio). Crie um programa em HTML/JS o qual:
+OBS: Use, necessariamente pelo menos um "ou" (||)
+a) Pergunte numa combo o tipo de arroz usado (integral ou branco)
+b) Pergunte o tempo de cozimento, em minutos
+c) Pergunte a quantidade de sal usada, em gramas
+d) Ao clicar em "Avaliar arroz", exiba, abaixo dele...
+    A frase "Arroz perfeito", caso:
+      Em caso de arroz branco, 10 minutos e até 10g de sal
+      Em caso de arroz integral, 20 minutos e até 15g de sal
+   A frase "Seu arroz não está perfeito", caso nenhum dos critérios anteriores tenha sido alcançado
+e) No caso de arroz perfeito, exiba também a imagem de um belo arroz, branco ou integral, conforme o tipo selecionado.
+ Caso contrário, exiba a cara do Jacquin bravo (aquele famoso meme), independe do tipo de arroz.-->

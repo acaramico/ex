@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="escudo()">Amo o escudo do meu time!</button>
+    <br>
+    <div id="div_escudo"></div>
+    
+</body>
+</html>
+<script>
+    function escudo(){
+        var contador = 0
+        while(contador<7){
+            div_escudo.innerHTML += '<img style="height:111px" src="https://games-b26f.kxcdn.com/wp-content/uploads/2018/06/SeoulDynastyCover-770x470.png"><br>'
+            contador++
+        }
+    }
+</script>
+<!--Crie um programa em HTML/JS o qual:
+a) Tenha um botão "Amo o escudo do meu time!"
+b) Ao clicar nele, mostre na própria página 7 vezes o mesmo escudo de um time de futebol (ou de LoL ou do esporte que quiser)-->

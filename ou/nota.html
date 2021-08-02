@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    informe a nota da avaliação:
+    <br>
+    <input id="in_nota">
+    <br><br>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="avaliacao" style="height: 100px; background-color: goldenrod; width: 0px;float: left;" >
+    </div> <div id="resultado" style="width: 500px; float: left;height: 100px;background-color: silver;" >
+    <img id="img1" style="width: 100px;float: left" src="https://static.vecteezy.com/system/resources/previews/001/189/167/non_2x/star-png.png">
+    <img id="img2" style="width: 100px;float: left" src="https://static.vecteezy.com/system/resources/previews/001/189/167/non_2x/star-png.png">
+    <img id="img3" style="width: 100px;float: left" src="https://static.vecteezy.com/system/resources/previews/001/189/167/non_2x/star-png.png">
+    <img id="img4" style="width: 100px;float: left" src="https://static.vecteezy.com/system/resources/previews/001/189/167/non_2x/star-png.png">
+    <img id="img5" style="width: 100px;float: left" src="https://static.vecteezy.com/system/resources/previews/001/189/167/non_2x/star-png.png"></div>
+    
+</body>
+</html>
+<script>
+    function avaliar(){
+        var nota = Number(in_nota.value)
+        if (nota<0 || nota>5) {
+            alert('Nota inválida. Digite de 0 a 5')
+            resultado.innerHTML = ' '
+        }
+        if (nota==5) {
+            
+        }
+
+    }
+
+</script>
+<!--9 (desafio). Solicite a nota da avaliação de um atendente e dê um feedback bem lúdico conforme segue.
+a) Solicite a nota da avaliação
+b) Ao clicar em "Avaliar", verifique se a avaliação está entre 0 e 5. Caso não estiver, exiba um alert "Nota inválida. Digite de 0 a 5", caso contrário, siga para o item c)
+
+c) Exiba uma certa quantidade de "estrelinhas amarelas" conforme a nota dada:
+    5 estrelas cinzas, lado a lado, caso a nota for menor que 0.5
+    "meia" estrela amarela, meia estrela cinza e 4 estrelas cinzas, lado a lado, caso a nota for entre 0.5 e menor que 1
+    uma estrela amarela, e 4 estrelas cinzas, lado a lado, caso a nota for entre 1 e menor que 1.5
+    E assim por diante, até a última possibilidade que é...
+    5 estrelas amarelas, lado a lado, caso a nota for exatamente 5-->

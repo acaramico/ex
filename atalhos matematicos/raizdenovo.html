@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número:
+    <br><br>
+    <input id="in_numero">
+    <br><br>
+    Informe outro número:
+    <br><br>
+    <input id="in_numero_dois">
+    <br><br>
+    <button onclick="raiz()">Calcular raiz</button>
+    <br><br>
+    <div id="resultados"></div>
+    
+</body>
+</html>
+<script>
+    function raiz(){
+        var num1 = Number(in_numero.value)
+        var num2 = Number(in_numero_dois.value)
+
+        var raizes = num1**(1/num2)
+
+        resultados.innerHTML = `A ${num2}ª raiz de ${num1} dá ${raizes}`
+    }
+
+</script>
+<!--Crie um programa em HTML/JS o qual:
+a) Solicite um número;
+b) Solicite outro número;
+c) Ao clicar em "Calcular Raiz": 
+c.1) Exibe, abaixo, um texto como este: "A Bª raiz de A dá X";
+Obs: A é o número informado em a) e B é o número informado em b);
+Ex: o usuário informou 25 e 2. Deve aparecer: "a 2ª raiz de 25 dá 5".-->

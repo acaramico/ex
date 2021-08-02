@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_frase" placeholder="frase a ser repetida">
+    <br>
+    <input id="in_quant" placeholder="quantidade a ser repetida">
+    <br>
+    <button onclick="aparecer()">Filosofar</button>
+    <br>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function aparecer(){
+        var contador = 0
+        var frase = in_frase.value
+        var quant = Number(in_quant.value)
+        if (frase == '') {
+            alert('Mas qual a frase?')
+        }
+        else if (quant == '' || quant <0) {
+            alert('Quantidade inválida')
+        }
+        else{
+            while(contador<quant){
+            div_frase.innerHTML+= frase+'<br>'
+            contador++
+            }
+        }
+    }
+</script>
+<!--Faça uma versão melhorada do programa anterior no qual:
+a) O usuário digita a frase que será exibida 7 vezes
+b) Se não tiver digitado nada ao clicar, exiba um alert "Mas qual a frase?" e, claro, não exiba a frase na tela (visto que ela nem existe, afinal)
+
+Faça uma versão melhorada do programa anterior no qual:
+a) O usuário informa a quantidade de vezes que quer que a frase repita
+b) Se a quantidade não for informada ou se for menor que 0, exiba um alert "Quantidade inválida" e, claro, não exiba a frase na tela
+-->

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_iniciar" onclick="iniciar()">Iniciar Jogo</button>
+    <br><br>
+    <img id="jk" src=" " style="height: 280px;" onclick="funcao_jk()" >
+    <br>
+    <div id="vida_jk" style="height: 0px ;width: 100%;background-color: chartreuse;"></div>
+    <br><br>
+    <img id="jin"  src=" " style="height: 230px;" onclick="funcao_jin()" >
+    <br>
+    <div id="vida_jin" style="height: 0px ;width: 100%; background-color: chartreuse;"></div>
+
+    <br><br>
+    <div id="golpes" style="color: white; " >
+        Golpes sofridos pelo JK: <b id="span_jk">0</b><br>
+        Golpes sofridos pelo JIN: <b id="span_jin">0</b>
+    </div>
+
+
+
+</body>
+</html>
+<script>
+   var soco_jk = 0;
+   var soco_jin = 0
+   var tamanho = 100
+   var diminuijk = tamanho*0.05;
+   var diminuijin = tamanho*0.05;
+   var vida_totaljk = tamanho
+   var vida_totaljin = tamanho
+    function iniciar(){
+    btn_iniciar.style.display = 'none'
+    jk.src= "https://i.pinimg.com/originals/e7/ec/ba/e7ecba9995fb6fb77c8209e626ec97df.jpg"
+    jin.src= "http://pm1.narvii.com/7570/85ccaf4d0ad81b95346e2733878d65023d7f3218r1-600-600v2_uhq.jpg"
+    vida_jk.style.height = "10px"
+    vida_jin.style.height = "10px"
+    golpes.style.color = 'black'
+}
+    function funcao_jk(){
+        total_j = ++soco_jk
+        span_jk.innerHTML = total_j
+        vida_totaljk = vida_totaljk-diminuijk
+        vida_jk.style.width = vida_totaljk+'%'
+    }
+    function funcao_jin(){
+        total_jj = ++soco_jin
+        span_jin.innerHTML = total_jj
+        vida_totaljin = vida_totaljin-diminuijin
+        vida_jin.style.width = vida_totaljin+'%'
+        
+    }
+
+</script>
+<!--Crie um programa em HTML/JS que simule um jogo de luta simples.
+a) Nada deve aparecer na tela a princípio, a não ser um botão "Iniciar Jogo":
+a.1) Ao clicar nele, aparecem os itens a seguir:
+b) Aparecem as fotos de 2 lutadores (como as dos exemplos abaixo). E, abaixo deles, uma "barra de vida", que ocupa 100% da largura da tela;
+
+c) Abaixo das imagens e barras, deve haver o texto:
+   Golpes sofridos pelo lutador 1: 0
+   Golpes sofridos pelo lutador 2: 0
+
+d) Sempre que for clicada na imagem de um dos lutadores, seu "contador" aumenta em 1 e sua barra reduz em 5% bruto (não relativo).
+ Ex: estava em 90%, vai para 85%. Estava em 75%, vai para 70%;-->

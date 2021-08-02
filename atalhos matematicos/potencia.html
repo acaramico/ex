@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número:
+    <br><br>
+    <input id="in_numero">
+    <br><br>
+    Informe outro número:
+    <br><br>
+    <input id="in_numero_dois">
+    <br><br>
+    <button onclick="potencia()">Fazer potência</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function potencia(){
+        var num_um = Number(in_numero.value);
+        var num_dois = Number(in_numero_dois.value)
+
+        var potencia = num_um**num_dois
+
+        resultados.innerHTML = `${num_um} elevado a ${num_dois} dá ${potencia}`
+    }
+
+</script>
+<!--Crie um programa em HTML/JS o qual:
+a) Solicite um número;
+b) Solicite outro número;
+c) Ao clicar em "Fazer potência": 
+c.1) Exibe, abaixo, um texto como este: "A elevado a B dá X";
+Obs: A é o número informado em a) e B é o número informado em b).-->
